@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { AddPostComponent } from './components/add-post/add-post.component';
-import { PostListComponent } from './components/post-list/post-list.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { AddPostComponent } from './add-post/add-post.component';
+import { BrowserModule } from '@angular/platform-browser';
 
-
-export const routes: any = [
-  { path: '', component: PostListComponent },
-  { path: 'add', component: AddPostComponent }
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'add-post', component: AddPostComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [BrowserModule ,RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

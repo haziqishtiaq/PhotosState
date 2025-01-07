@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 const ADD_POST = gql`
   mutation AddPost($description: String!, $imageUrl: String!) {
@@ -18,7 +18,8 @@ const ADD_POST = gql`
 @Component({
   selector: 'app-add-post',
   templateUrl: './add-post.component.html',
-  styleUrls: ['./add-post.component.css']
+  styleUrls: ['./add-post.component.css'],
+  standalone: false
 })
 export class AddPostComponent {
   description: string = '';
