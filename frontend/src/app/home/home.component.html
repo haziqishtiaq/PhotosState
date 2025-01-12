@@ -2,10 +2,13 @@
     <div class="row">
       <div class="col-md-4" *ngFor="let post of posts">
         <div class="card mb-4">
-          <img [src]="post.imageUrl" class="card-img-top" alt="Post Image">
+          <img [src]="post.imageUrl" class="card-img-top img-fluid img-responsive img-thumbnail max" alt="Post Image">
           <div class="card-body">
             <p class="card-text">{{ post.description }}</p>
-            <button class="btn btn-primary" (click)="likePost(post.id)">Like ({{ post.likes }})</button>
+            <button class="btn btn-primary" (click)="likePost(post.id)">
+              <i class="fas fa-thumbs-up"></i>
+              Like ({{ post.likes }})
+            </button>
           </div>
         </div>
       </div>

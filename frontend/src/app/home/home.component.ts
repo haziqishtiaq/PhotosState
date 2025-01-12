@@ -1,5 +1,4 @@
 import { Component, NgModule, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 
@@ -34,6 +33,7 @@ export class HomeComponent implements OnInit {
   posts: any[] = [];
 
   constructor(private apollo: Apollo) {}
+
 
   ngOnInit() {
     this.apollo.watchQuery({ query: GET_POSTS }).valueChanges.subscribe((result: any) => {
